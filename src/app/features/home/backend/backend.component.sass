@@ -1,0 +1,85 @@
+.backend-container
+  display: block
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  text-align: center
+  padding: 20px
+  background: transparent
+  
+.title-section
+  text-align: center
+  margin-top: 10vh // Aumenta este valor para bajar la sección del título
+  margin-bottom: 40px
+
+.timeline-item
+  margin: 119.52px
+  padding: 10px
+
+.backend-title
+  display: inline-block // Asegurarse de que el elemento se ajuste a su contenido
+  font-size: 2.5rem
+  color: #fff // Cambiar el color del texto a blanco para mejor contraste
+  text-align: center
+  padding: 20px 0
+   margin-bottom: 20px
+  font-family: 'Roboto', sans-serif
+  font-weight: 700
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) // Añadir una sombra sutil al texto
+
+.backend-experience
+  padding: 0px
+  background-color: rgba(245, 245, 245, 0.5) // Hacer el fondo más transparente
+  text-align: center
+  border-radius: 10px
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+  margin: 0px auto
+  max-width: 1000px
+
+.backend-subtitle
+  display: block
+  font-size: 1.5rem // Aumentar el tamaño de la fuente
+  color: #111 // Usar un color más oscuro para el texto
+  font-weight: 600 // Hacer el texto más grueso
+  padding: 20px
+  font-family: 'Lato', sans-serif 
+  line-height: 1.75 // Aumentar el line-height para mejor legibilidad
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2) // Mejorar la sombra del texto
+
+.chart-container,
+.chart-container2
+  display: flex
+  flex-direction: column
+  justify-content: center
+  width: 48% // Ocupa un poco menos del 50% del ancho del contenedor padre para dejar espacio entre los gráficos
+  max-width: 600px
+  margin: 40px 1% // Añade un margen entre los gráficos para que no estén pegados
+  padding: 10px // Añade un poco de relleno para un mejor aspecto
+
+.chart-container h2,
+.chart-container2 h2
+  margin-bottom: 10px
+  font-size: 1.5rem
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2) // Mejorar la sombra del texto
+  color: #111
+  line-height: 1.75 
+  background-color: rgba(255, 255, 255, 0.5) // Añadir un fondo blanco semitransparente
+  padding: 5px 10px // Añadir relleno alrededor del texto
+  border-radius: 5px // Añadir bordes redondeados
+
+.charts-row
+  display: flex
+  justify-content: space-between // Asegura que los gráficos estén alineados a los extremos del contenedor
+  align-items: center // Asegura que los gráficos estén alineados verticalmente
+  width: 100%
+
+canvas
+  width: 100% // Asegúrate de que el canvas ocupa todo el ancho del contenedor
+  height: auto // Mantén la relación de aspecto del gráfico
+
+
+#skillsRadarChart,
+#skillsRadarChart2
+  width: 100% // Ajustar el ancho del canvas
+  height: 120px // Fijar la altura del canvas para evitar que sea demasiado pequeño
+

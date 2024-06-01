@@ -1,0 +1,15 @@
+<div class="game-container">
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <div class="button-group">
+      <button class="btn" (click)="startGame()">Start Game</button>
+      <button class="btn primary" (click)="stopGame()">Stop Game</button>
+      <button class="btn secondary" *ngIf="isDownloadButtonVisible" (click)="DownloadCV()">Download</button>
+      <button class="btn tertiary" (click)="WelcomeHome()">Home</button>
+    </div>
+    <div class="timer-display">
+      Tiempo Restante: {{ displayTime }}
+    </div>
+</div>
+
+<a href="assets/GuilhermeNoguiera_CV_EN.pdf" download="GuilhermeNoguiera_CV_EN.pdf">Descargar Archivo</a>
+

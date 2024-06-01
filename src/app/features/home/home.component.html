@@ -1,0 +1,21 @@
+<div class="scene" [ngClass]="{'dark': isNight}" (window:scroll)="onWindowScroll()">
+  <div class="sun" [ngStyle]="sunStyle"></div>
+  <div class="content">
+    <app-presentation class="timeline-item" *ngIf="!showSnakeGame"></app-presentation>
+    <app-frontend class="timeline-item" *ngIf="!showSnakeGame"></app-frontend>
+    <app-backend class="timeline-item" *ngIf="!showSnakeGame"></app-backend>
+  </div>
+  <div *ngIf="showInvitation" class="invitation" data-aos="zoom-out" data-aos-duration="3000">
+    <p>Would you like to download my CV? Play Snake for two minutes without dying!</p>
+    <div class="button-container">
+      <button (click)="startSnakeGame()">Yes</button>
+      <button (click)="declineInvitation()">No</button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="showSnakeGame">
+  <!-- Contenido del juego de Snake aquí -->
+  <app-snake-game></app-snake-game> 
+</div>
+
