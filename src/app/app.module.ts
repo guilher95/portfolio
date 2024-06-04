@@ -1,5 +1,7 @@
 import { NgModule, AfterViewInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+
 import * as AOS from 'aos';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,13 +20,15 @@ import { SnakeGameComponent } from './features/home/snake-game/snake-game.compon
     FrontendComponent,
     BackendComponent,
     PresentationComponent,
-    SnakeGameComponent
+    SnakeGameComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule implements AfterViewInit {

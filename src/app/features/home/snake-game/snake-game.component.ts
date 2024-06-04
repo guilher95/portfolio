@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 interface FoodItem {
   x: number;
@@ -14,6 +15,7 @@ interface FoodItem {
 })
 
 export class SnakeGameComponent implements OnInit, OnDestroy {
+  private cvUrl = 'https://raw.githubusercontent.com/guilher95/cv/main/MyResume.pdf';
   dx = 10;  // Cantidad de movimiento en x
   dy = 0;   // Cantidad de movimiento en y
   snake = [{x: 200, y: 200}]; // La serpiente comienza en el centro
@@ -31,8 +33,7 @@ export class SnakeGameComponent implements OnInit, OnDestroy {
     imgSrc: 'assets/snake/csharp.png' // Imagen inicial
   };
   imageCache: {[key: string]: HTMLImageElement} = {};  // Cache para las imágenes pre-cargadas
-
-  constructor(private router: Router) {}
+  constructor(private router: Router, private http: HttpClient) {}
 
   ngOnInit(): void {
     const canvas = document.getElementById('gameCanvas') as HTMLCanvasElement;
@@ -85,24 +86,19 @@ export class SnakeGameComponent implements OnInit, OnDestroy {
   }
 }
 
-  DownloadCV(){
-    const filePath = 'assets/GuilhermeNoguiera_CV_EN.pdf';
-  fetch(filePath)
-    .then(response => response.blob())
-    .then(blob => {
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.style.display = 'none';
-      a.href = url;
-      a.download = 'GuilhermeNoguiera_CV_EN.pdf'; // Puedes especificar el nombre del archivo
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      window.URL.revokeObjectURL(url);
-    })
-    .catch(e => console.error('Error al descargar el archivo: ', e));
+DownloadCV() {
+  const urlWithTimestamp = `${this.cvUrl}?t=${new Date().getTime()}`;
+  this.http.get(urlWithTimestamp, { responseType: 'blob' }).subscribe((data) => {
+    const url = window.URL.createObjectURL(data);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'MyResume.pdf';
+    document.body.appendChild(a);
+    a.click();
+    window.URL.revokeObjectURL(url);
+  });
+}  
 
-  }
   enableDownloadButton() {
     if (this.remainingTime <= 0) {
       this.isDownloadButtonVisible = true;  // Hace visible el botón
@@ -159,7 +155,7 @@ export class SnakeGameComponent implements OnInit, OnDestroy {
       clearInterval(this.countdownTimer);
       this.countdownTimer = undefined;
     }
-    this.remainingTime = 120;  // Reinicia el tiempo a 2 minutos
+    this.remainingTime = 10;  // Reinicia el tiempo a 2 minutos
     this.formatDisplayTime();  // Actualiza la visualización del tiempo
   
     // Deshabilita el botón de descarga hasta que el juego se reinicie
