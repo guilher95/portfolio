@@ -1,3 +1,5 @@
+$small: 460px
+
 .frontend-container
   display: block
   flex-direction: column
@@ -13,7 +15,7 @@
   margin-bottom: 40px
 
 .timeline-item
-  margin: 119.52px
+  margin: 119.52px auto 180px
   padding: 10px
 
 .frontend-title
@@ -22,5 +24,55 @@
   color: #333
   text-align: center
   padding: 20px 0
-  font-family: 'Roboto', sans-serif
+  font-family: 'Arial', sans-serif
   font-weight: 700
+
+.frontend-experience
+  padding: 10px
+  background-color: rgba(182, 209, 233, 0.94) // Hacer el fondo más transparente
+  text-align: center
+  border-radius: 10px
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+  margin: 0px auto
+  max-width: 1000px
+  min-width: 300px
+
+.frontend-subtitle
+  display: block
+  font-size: 1.5rem // Aumentar el tamaño de la fuente
+  color: #111 // Usar un color más oscuro para el texto
+  font-weight: 600 // Hacer el texto más grueso
+  padding: 20px
+  font-family: 'Lato', sans-serif 
+  line-height: 1.75 // Aumentar el line-height para mejor legibilidad
+
+  @media screen and (max-width: $small) 
+    font-size: 16px
+  
+.logo-slider
+  overflow: hidden
+  padding: 20px 0
+  white-space: nowrap
+  position: relative
+  background-color: rgba(182, 209, 233, 0.94)
+  margin-bottom: 250px
+  width: 100vw
+  margin-left: -20px
+
+.logos-slide
+  display: inline-block
+  animation: 50s slide infinite linear
+
+
+  img
+    height: 83px
+    margin: 0 50px
+
+@keyframes slide
+  from
+    transform: translateX(0)
+  to
+    transform: translateX(-100%)
+
+
+

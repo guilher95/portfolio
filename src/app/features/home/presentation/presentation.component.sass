@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap')
+$small: 460px
 
 .presentation-content
   display: flex
@@ -9,16 +9,20 @@
   text-align: center
   padding: 20px
   background: transparent
-  font-family: 'Roboto', sans-serif
+  font-family: 'Arial', sans-serif
 
 .profile-photo
-  width: 150px
-  height: 150px
+  width: 200px
+  height: auto
   border-radius: 50%
   margin-bottom: 20px
   border: 4px solid #fff
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.15)
 
+  @media screen and (min-width: $small) 
+    width: 250px
+  
+  
 .text-content
   h1
     font-size: 2.5em
@@ -27,14 +31,14 @@
     font-weight: 700
 
   p
-    font-size: 1.2em
+    font-size: 1.7em
     max-width: 600px
     color: #555
     line-height: 1.5
     margin: 0 20px
 
 .scroll-down
-  margin-top: 50px
+  margin: 50px auto 100px
   font-size: 1.5em
   color: #333
   animation: bounce 2s infinite

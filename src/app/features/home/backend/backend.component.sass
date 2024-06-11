@@ -1,3 +1,6 @@
+$small: 460px
+$medium: 900px
+
 .backend-container
   display: block
   flex-direction: column
@@ -13,7 +16,7 @@
   margin-bottom: 40px
 
 .timeline-item
-  margin: 119.52px
+  margin: 119.52px auto
   padding: 10px
 
 .backend-title
@@ -23,12 +26,12 @@
   text-align: center
   padding: 20px 0
    margin-bottom: 20px
-  font-family: 'Roboto', sans-serif
+  font-family: 'Arial', sans-serif
   font-weight: 700
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) // Añadir una sombra sutil al texto
 
 .backend-experience
-  padding: 0px
+  padding: 10px
   background-color: rgba(245, 245, 245, 0.5) // Hacer el fondo más transparente
   text-align: center
   border-radius: 10px
@@ -42,10 +45,13 @@
   color: #111 // Usar un color más oscuro para el texto
   font-weight: 600 // Hacer el texto más grueso
   padding: 20px
-  font-family: 'Lato', sans-serif 
+  font-family: 'Arial', sans-serif 
   line-height: 1.75 // Aumentar el line-height para mejor legibilidad
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2) // Mejorar la sombra del texto
 
+  @media screen and (max-width: $small) 
+    font-size: 16px
+  
 .chart-container,
 .chart-container2
   display: flex
@@ -56,6 +62,9 @@
   margin: 40px 1% // Añade un margen entre los gráficos para que no estén pegados
   padding: 10px // Añade un poco de relleno para un mejor aspecto
 
+  @media screen and (max-width: $medium) 
+    width: 100%
+  
 .chart-container h2,
 .chart-container2 h2
   margin-bottom: 10px
@@ -73,6 +82,9 @@
   align-items: center // Asegura que los gráficos estén alineados verticalmente
   width: 100%
 
+  @media screen and (max-width: $medium) 
+    flex-direction: column
+  
 canvas
   width: 100% // Asegúrate de que el canvas ocupa todo el ancho del contenedor
   height: auto // Mantén la relación de aspecto del gráfico

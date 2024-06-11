@@ -155,7 +155,7 @@ DownloadCV() {
       clearInterval(this.countdownTimer);
       this.countdownTimer = undefined;
     }
-    this.remainingTime = 10;  // Reinicia el tiempo a 2 minutos
+    this.remainingTime = 120;  // Reinicia el tiempo a 2 minutos
     this.formatDisplayTime();  // Actualiza la visualización del tiempo
   
     // Deshabilita el botón de descarga hasta que el juego se reinicie

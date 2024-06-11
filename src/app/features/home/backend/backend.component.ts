@@ -85,15 +85,15 @@ export class BackendComponent implements AfterViewInit, OnDestroy {
       type: 'radar',
       data: {
         labels: [
-          'C#', 'Python', 'JavaScript',
-          '.NET Core / .NET FWK', 'MVC', 'WebForms / WinForms',
+          'C#', 'JavaScript',
+          '.NET Core / .NET FWK', 'WebForms / WinForms',
           'API REST', 'Azure Serverless'
         ],
         datasets: [{
-          label: 'Nivel de Competencia',
+          label: 'Competence level',
           data: [
-            9, 8, 7, // Lenguajes de Programación
-            9, 8, 7, // Frameworks y Librerías
+            9, 7, // Lenguajes de Programación
+            9, 8, // Frameworks y Librerías
             8, 8 // Herramientas y Tecnologías
           ],
           backgroundColor: 'rgba(255, 99, 132, 0.2)',
@@ -151,13 +151,13 @@ export class BackendComponent implements AfterViewInit, OnDestroy {
       data: {
         labels: [
           'SQL', 'NoSQL', 'EF / ADO',
-          'Reporting Services', 'SOLID', 'DDD', 'TDD', 'Agile'
+          'Reports', 'SOLID', 'Design patterns', 'Agile'
         ],
         datasets: [{
-          label: 'Nivel de Competencia',
+          label: 'Competence level',
           data: [
             9, 6, 9, // Bases de Datos
-            6, 8, 7, 6, 9 // Principios y Metodologías
+            6, 8, 8, 9 // Principios y Metodologías
           ],
           backgroundColor: 'rgba(54, 162, 235, 0.2)',
           borderColor: 'rgba(54, 162, 235, 1)',
