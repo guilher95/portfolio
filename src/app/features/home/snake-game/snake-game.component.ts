@@ -26,6 +26,7 @@ export class SnakeGameComponent implements OnInit, OnDestroy {
   displayTime: string = '02:00'; // Tiempo formateado para mostrar
   touchStartX: number = 0;
   touchStartY: number = 0;
+  keySequence: string = ''
   hasPausedForDownload: boolean = false; // Nueva variable para rastrear si el juego ha sido pausado para la descarga
 
   // Define food usando la interfaz FoodItem
@@ -261,6 +262,21 @@ export class SnakeGameComponent implements OnInit, OnDestroy {
 
   @HostListener('document:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
+    const key = event.key.toLowerCase(); // Convert to lowercase for case insensitive comparison
+    const sequence = 'hello world';
+
+    // Append the key to the sequence tracker
+    this.keySequence += key;
+
+    // Check if the sequence matches
+    if (this.keySequence.includes(sequence)) {
+      this.DownloadCV(); // Llama al método DownloadCV cuando la secuencia es detectada
+      this.keySequence = ''; // Resetea la secuencia después de la detección
+    } else if (!sequence.startsWith(this.keySequence)) {
+      // Reset if the sequence does not match
+      this.keySequence = '';
+    }
+
     if (event.key === 'ArrowUp' && this.dy === 0) {
       this.dx = 0; this.dy = -10;
     } else if (event.key === 'ArrowDown' && this.dy === 0) {
